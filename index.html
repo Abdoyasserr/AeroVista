@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroVista Cairo Residence | Modern Apartment Rental in Cairo</title>
+  <meta name="description" content="Discover a comfortable, modern apartment rental in Cairo, Egypt. View apartment photos, amenities, location information and contact the owner directly.">
+  <meta name="keywords" content="apartment rental Cairo, Egypt tourism, vacation rental, short stay Cairo, furnished apartment Egypt">
+  <meta name="author" content="AeroVista Cairo Residence">
+  <meta name="theme-color" content="#1a2332">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AeroVista Cairo Residence | Modern Apartment Rental in Cairo">
+  <meta property="og:description" content="Discover a comfortable, modern apartment rental in Cairo, Egypt. View apartment photos, amenities, location information and contact the owner directly.">
+  <meta property="og:type" content="website">
+  <!-- Replace with your actual image URL -->
+  <meta property="og:image" content="assets/images/living-room.jpg">
+
+  <!-- Favicon placeholder — replace with your own -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "AeroVista Cairo Residence",
+    "description": "A comfortable, modern apartment rental in Cairo, Egypt for tourists, families and short stays.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cairo",
+      "addressCountry": "EG"
+    },
+    "telephone": "+201000000000",
+    "email": "your-email@example.com",
+    "url": "",
+    "image": "assets/images/living-room.jpg",
+    "priceRange": "$$",
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Free Wi-Fi"},
+      {"@type": "LocationFeatureSpecification", "name": "Air Conditioning"},
+      {"@type": "LocationFeatureSpecification", "name": "Fully Equipped Kitchen"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo" aria-label="AeroVista Cairo Residence — Home">
+        <i class="fas fa-building"></i>
+        <span class="logo-text">AeroVista Cairo Residence</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="menubar">
+        <li role="none"><a href="#home" class="nav-link active" role="menuitem">Home</a></li>
+        <li role="none"><a href="#gallery" class="nav-link" role="menuitem">Gallery</a></li>
+        <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#amenities" class="nav-link" role="menuitem">Amenities</a></li>
+        <li role="none"><a href="#location" class="nav-link" role="menuitem">Location</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+        <li role="none"><a href="#contact" class="nav-link btn-book" role="menuitem">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title reveal-hero">Your Comfortable Stay in the Heart of Egypt</h1>
+      <p class="hero-subtitle reveal-hero">Enjoy a modern, fully equipped apartment designed for tourists, families and short stays.</p>
+      <div class="hero-buttons reveal-hero">
+        <a href="#gallery" class="btn btn-primary">View Apartment</a>
+        <a href="#contact" class="btn btn-outline">Contact Owner</a>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========== QUICK INFO ========== -->
+  <section class="quick-info">
+    <div class="container">
+      <div class="info-card reveal">
+        <!-- Edit the values below to match your apartment -->
+        <div class="info-item">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <span class="info-value">4</span>
+          <span class="info-label">Guests</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-bed" aria-hidden="true"></i>
+          <span class="info-value">2</span>
+          <span class="info-label">Bedrooms</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-couch" aria-hidden="true"></i>
+          <span class="info-value">3</span>
+          <span class="info-label">Beds</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-bath" aria-hidden="true"></i>
+          <span class="info-value">2</span>
+          <span class="info-label">Bathroom</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-ruler-combined" aria-hidden="true"></i>
+          <span class="info-value">130 m²</span>
+          <span class="info-label">Size</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-wifi" aria-hidden="true"></i>
+          <span class="info-value">Free</span>
+          <span class="info-label">Wi-Fi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Explore the Apartment</h2>
+        <p class="section-subtitle">Take a closer look at the rooms, facilities and comfortable spaces.</p>
+      </div>
+      <div class="gallery-grid">
+        <!-- Replace src with your actual apartment photos -->
+        <div class="gallery-item reveal" data-index="0">
+          <img src="assets/images/living-room.jpg" alt="Spacious living room with modern furniture" width="600" height="400" loading="lazy">
+          <div class="gallery-overlay"><span>Living Room</span></div>
+        </div>
+        <div class="gallery-item reveal" data-index="1">
+          <img src="assets/images/bedroom-1.jpg" alt="Comfortable primary bedroom with queen bed" width="600" height="400" loading="lazy">
+          <div class="gallery-overlay"><span>Bedroom 1</span></div>
+        </div>
+        <div class="gallery-item reveal" data-index="2">
+          <img src="assets/images/bedroom-2.jpg" alt="Cozy second bedroom with twin beds" width="600" height="400" loading="lazy">
+          <div class="gallery-overlay"><span>Bedroom 2</span></div>
+        </div>
+        <div class="gallery-item reveal" data-index="3">
+          <img src="assets/images/kitchen.jpg" alt="Fully equipped modern kitchen" width="600" height="400" loading="lazy">
+          <div class="gallery-overlay"><span>Kitchen</span></div>
+        </div>
+        <div class="gallery-item reveal" data-index="4">
+          <img src="assets/images/bathroom.jpg" alt="Clean modern bathroom with shower" width="600" height="400" loading="lazy">
+          <div class="gallery-overlay"><span>Bathroom</span></div>
+        </div>
+        <div class="gallery-item reveal" data-index="5">
+          <img src="assets/images/balcony.jpg" alt="Apartment balcony with seating and city view" width="600" height="400" loading="lazy">
+          <div class="gallery-overlay"><span>Balcony</span></div>
+        </div>
+        <div class="gallery-item reveal" data-index="6">
+          <img src="assets/images/dining-area.jpg" alt="Dining area with table for four" width="600" height="400" loading="lazy">
+          <div class="gallery-overlay"><span>Dining Area</span></div>
+        </div>
+        <div class="gallery-item reveal" data-index="7">
+          <img src="assets/images/building-view.jpg" alt="Building exterior view" width="600" height="400" loading="lazy">
+          <div class="gallery-overlay"><span>Building View</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image preview" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close image preview">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="" loading="lazy">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-image reveal">
+        <!-- Replace with your apartment photo -->
+        <img src="assets/images/about-apartment.jpg" alt="Overview of the apartment interior" width="700" height="500" loading="lazy">
+      </div>
+      <div class="about-content reveal">
+        <h2 class="section-title">A Home Away From Home</h2>
+        <p class="about-desc">This modern apartment provides everything tourists need for a comfortable and relaxing stay. It is suitable for couples, families and business travelers. The apartment offers spacious rooms, modern furniture, essential appliances and easy access to nearby attractions and services.</p>
+        <ul class="about-checklist">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Fully furnished</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Air conditioning</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Fast Wi-Fi</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Equipped kitchen</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Clean bed sheets and towels</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Smart TV</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Elevator access</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Secure building</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Suitable for families</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Flexible check-in</li>
+        </ul>
+        <div class="about-highlight">
+          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+          <span>Available for daily, weekly and monthly stays.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AMENITIES ========== -->
+  <section class="section amenities-section" id="amenities">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Amenities</h2>
+        <p class="section-subtitle">Everything you need for a comfortable stay.</p>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-wifi"></i></div>
+          <h3>Free Wi-Fi</h3>
+          <p>High-speed internet available throughout the apartment.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-snowflake"></i></div>
+          <h3>Air Conditioning</h3>
+          <p>Stay cool with air conditioning in every room.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-tv"></i></div>
+          <h3>Smart TV</h3>
+          <p>Enjoy streaming and entertainment on a smart TV.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-utensils"></i></div>
+          <h3>Fully Equipped Kitchen</h3>
+          <p>Cook your own meals with modern kitchen appliances.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-soap"></i></div>
+          <h3>Washing Machine</h3>
+          <p>Convenient in-unit washing machine for your laundry.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-temperature-low"></i></div>
+          <h3>Refrigerator</h3>
+          <p>Full-size refrigerator to keep your food and drinks fresh.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-hot-tub-person"></i></div>
+          <h3>Hot Water</h3>
+          <p>24-hour hot water for showers and daily use.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-bed"></i></div>
+          <h3>Towels and Bed Linen</h3>
+          <p>Fresh, clean towels and bed linen provided.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-elevator"></i></div>
+          <h3>Elevator</h3>
+          <p>Easy access with a building elevator.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Security</h3>
+          <p>Secure building entrance for your peace of mind.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-bus"></i></div>
+          <h3>Nearby Transportation</h3>
+          <p>Close to metro stations, buses and taxi services.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-child"></i></div>
+          <h3>Family Friendly</h3>
+          <p>Safe and welcoming environment for families with children.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY CHOOSE ========== -->
+  <section class="section why-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Why Choose This Apartment</h2>
+        <p class="section-subtitle">Here's what makes your stay special.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Excellent Location</h3>
+          <p>Easy access to transportation, restaurants, shops and tourist attractions.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+          <h3>Clean and Comfortable</h3>
+          <p>A carefully prepared apartment with clean rooms and comfortable furniture.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-phone-volume"></i></div>
+          <h3>Direct Owner Contact</h3>
+          <p>Contact the apartment owner directly without complicated booking procedures.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-clock"></i></div>
+          <h3>Flexible Stays</h3>
+          <p>Suitable for short holidays, business trips and longer stays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCATION ========== -->
+  <section class="section location-section" id="location">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Apartment Location</h2>
+        <p class="section-subtitle">Conveniently located in Cairo, Egypt.</p>
+      </div>
+      <div class="location-grid reveal">
+        <div class="location-map">
+          <!-- Replace the src below with your actual Google Maps embed URL -->
+          <iframe
+            src="https://www.google.com/maps?q=Rich+House,+Huckstep,+El+Nozha,+Cairo+Governorate+4473221&output=embed"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Apartment location on Google Maps"></iframe>
+        </div>
+        <div class="location-details">
+          <h3>Nearby Places</h3>
+          <ul class="nearby-list">
+            <li><i class="fas fa-shopping-cart" aria-hidden="true"></i> Supermarket — 3 minutes</li>
+            <li><i class="fas fa-utensils" aria-hidden="true"></i> Restaurant — 5 minutes</li>
+            <li><i class="fas fa-train" aria-hidden="true"></i> Metro / Transportation — 7 minutes</li>
+            <li><i class="fas fa-pills" aria-hidden="true"></i> Pharmacy — 3 minutes</li>
+            <li><i class="fas fa-landmark" aria-hidden="true"></i> Tourist Attractions — 20 minutes</li>
+          </ul>
+          <!-- Replace href with your actual Google Maps link -->
+          <a href="https://www.google.com/maps?q=Rich+House,+Huckstep,+El+Nozha,+Cairo+Governorate+4473221&ftid=0x145816ee6d97e5bd:0x5b5d3a5c066825a2&entry=gps" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-maps" id="mapsBtn">
+            <i class="fas fa-map-marked-alt"></i> Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="cta-bg" aria-hidden="true"></div>
+    <div class="cta-overlay" aria-hidden="true"></div>
+    <div class="container cta-content reveal">
+      <h2>Ready to Enjoy Your Stay in Egypt?</h2>
+      <p>Contact me directly to check availability, rental prices and booking details.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary btn-whatsapp-cta" id="ctaWhatsapp" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> Contact on WhatsApp
+        </a>
+        <a href="#" class="btn btn-outline btn-call-cta" id="ctaCall">
+          <i class="fas fa-phone"></i> Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER / CONTACT ========== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info reveal">
+          <h2 class="footer-title">Contact the Apartment Owner</h2>
+          <ul class="contact-list">
+            <li><i class="fas fa-user" aria-hidden="true"></i> <span id="footerOwner">Your Name</span></li>
+            <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+201000000000" id="footerPhone">+20 100 000 0000</a></li>
+            <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer" id="footerWhatsapp">+20 100 000 0000</a></li>
+            <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:your-email@example.com" id="footerEmail">your-email@example.com</a></li>
+            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span id="footerCity">Cairo, Egypt</span></li>
+            <li><i class="fas fa-clock" aria-hidden="true"></i> Available daily from 9:00 AM to 11:00 PM</li>
+          </ul>
+          <div class="social-icons">
+            <!-- Add your social media links -->
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-form reveal">
+          <h3>Send an Inquiry</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="guestName">Full Name *</label>
+              <input type="text" id="guestName" name="guestName" required placeholder="Your full name">
+              <span class="form-error" id="guestNameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="guestContact">Email or Phone *</label>
+              <input type="text" id="guestContact" name="guestContact" required placeholder="Email or phone number">
+              <span class="form-error" id="guestContactError"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="arrivalDate">Arrival Date *</label>
+                <input type="date" id="arrivalDate" name="arrivalDate" required>
+                <span class="form-error" id="arrivalDateError"></span>
+              </div>
+              <div class="form-group">
+                <label for="departureDate">Departure Date *</label>
+                <input type="date" id="departureDate" name="departureDate" required>
+                <span class="form-error" id="departureDateError"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="numGuests">Number of Guests *</label>
+              <input type="number" id="numGuests" name="numGuests" min="1" max="20" required placeholder="e.g. 2">
+              <span class="form-error" id="numGuestsError"></span>
+            </div>
+            <div class="form-group">
+              <label for="guestMessage">Message</label>
+              <textarea id="guestMessage" name="guestMessage" rows="4" placeholder="Any special requests or questions..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">
+              <i class="fab fa-whatsapp"></i> Send Inquiry via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2026</span> AeroVista Cairo Residence. All rights reserved.</p>
+        <p>Made for a comfortable stay in Egypt.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING BUTTONS ========== -->
+  <div class="floating-buttons">
+    <a href="#" class="float-btn float-whatsapp" id="floatWhatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp" data-tooltip="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#" class="float-btn float-phone" id="floatPhone" aria-label="Call us" data-tooltip="Call Now">
+      <i class="fas fa-phone"></i>
+    </a>
+    <button class="float-btn float-top" id="backToTop" aria-label="Back to top" data-tooltip="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
