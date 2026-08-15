@@ -407,7 +407,7 @@ ul {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
@@ -419,15 +419,27 @@ ul {
   aspect-ratio: 4/3;
 }
 
-.gallery-item img {
+.gallery-carousel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  will-change: transform;
+}
+
+.gallery-track img {
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.08);
+  pointer-events: none;
+  user-select: none;
 }
 
 .gallery-overlay {
@@ -439,6 +451,8 @@ ul {
   padding: 16px;
   opacity: 0;
   transition: opacity 0.35s;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -449,6 +463,34 @@ ul {
   color: var(--color-white);
   font-weight: 600;
   font-size: 0.95rem;
+}
+
+.gallery-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.gallery-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.gallery-dots span.active {
+  background: var(--color-white);
+  transform: scale(1.15);
+}
+
+.gallery-item:hover .gallery-dots {
+  bottom: 42px;
 }
 
 /* ========== LIGHTBOX ========== */

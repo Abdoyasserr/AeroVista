@@ -6,9 +6,11 @@
 const apartmentConfig = {
   apartmentName: "AeroVista Cairo Residence",
   ownerName: "Moussa Mostafa",
-  phoneNumber: "+201020414058",
-  whatsappNumber: "201020414058",
-  email: "your-email@example.com",
+  phoneNumber: "+201096606466",
+  phoneNumber2: "+201105507636",
+  whatsappNumber: "201096606466",
+  whatsappNumber2: "201105507636",
+  email: "Aerovista.cairo@gmail.com",
   city: "Cairo, Egypt",
   googleMapsUrl: "https://www.google.com/maps?q=Rich+House,+Huckstep,+El+Nozha,+Cairo+Governorate+4473221&ftid=0x145816ee6d97e5bd:0x5b5d3a5c066825a2&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820242&g_ep=CAISEjI2LjI4LjAuOTQyOTUxNTM4MBgAIIgnKlMsOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0MkICRUc%3D&skid=aec95b4c-45b5-4dd9-973f-a8e10e88c8e7&g_st=iw",
 };
@@ -31,10 +33,15 @@ function safeEl(id) { return document.getElementById(id); }
 
   // Footer contact info
   setText(safeEl("footerOwner"), c.ownerName);
+  const formatPhone = (n) => n.replace(/(\+\d{2})(\d{3})(\d{3})(\d{4})/, "$1 $2 $3 $4");
   const footerPhone = safeEl("footerPhone");
-  if (footerPhone) { footerPhone.textContent = c.phoneNumber.replace(/(\+\d{2})(\d{3})(\d{3})(\d{4})/, "$1 $2 $3 $4"); footerPhone.href = "tel:" + c.phoneNumber; }
+  if (footerPhone) { footerPhone.textContent = formatPhone(c.phoneNumber); footerPhone.href = "tel:" + c.phoneNumber; }
+  const footerPhone2 = safeEl("footerPhone2");
+  if (footerPhone2 && c.phoneNumber2) { footerPhone2.textContent = formatPhone(c.phoneNumber2); footerPhone2.href = "tel:" + c.phoneNumber2; }
   const footerWA = safeEl("footerWhatsapp");
-  if (footerWA) { footerWA.textContent = c.phoneNumber.replace(/(\+\d{2})(\d{3})(\d{3})(\d{4})/, "$1 $2 $3 $4"); footerWA.href = "https://wa.me/" + c.whatsappNumber; }
+  if (footerWA) { footerWA.textContent = formatPhone(c.phoneNumber); footerWA.href = "https://wa.me/" + c.whatsappNumber; }
+  const footerWA2 = safeEl("footerWhatsapp2");
+  if (footerWA2 && c.whatsappNumber2) { footerWA2.textContent = formatPhone(c.phoneNumber2); footerWA2.href = "https://wa.me/" + c.whatsappNumber2; }
   const footerEmail = safeEl("footerEmail");
   if (footerEmail) { footerEmail.textContent = c.email; footerEmail.href = "mailto:" + c.email; }
   setText(safeEl("footerCity"), c.city);
@@ -152,6 +159,47 @@ function safeEl(id) { return document.getElementById(id); }
 })();
 
 /* ============================================================
+   Gallery carousels — auto-scroll 2 photos per card
+   ============================================================ */
+(function galleryCarousels() {
+  const INTERVAL = 4000;
+
+  $$(".gallery-item").forEach((item, i) => {
+    const track = $(".gallery-track", item);
+    const dots = $$(".gallery-dots span", item);
+    const slides = $$("img", track);
+    if (!track || slides.length < 2) return;
+
+    let index = 0;
+    let timer = null;
+
+    function goTo(n) {
+      index = ((n % slides.length) + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, d) => dot.classList.toggle("active", d === index));
+    }
+
+    function start() {
+      stop();
+      timer = setInterval(() => goTo(index + 1), INTERVAL);
+    }
+
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+    }
+
+    // Stagger so cards don't flip at the same time
+    setTimeout(start, i * 700);
+
+    item.addEventListener("mouseenter", stop);
+    item.addEventListener("mouseleave", start);
+    item.addEventListener("focusin", stop);
+    item.addEventListener("focusout", start);
+  });
+})();
+
+/* ============================================================
    Gallery lightbox
    ============================================================ */
 (function lightbox() {
@@ -160,29 +208,32 @@ function safeEl(id) { return document.getElementById(id); }
   const captionEl = safeEl("lightboxCaption");
   if (!lightboxEl || !imgEl) return;
 
-  const items = $$(".gallery-item");
+  // Flat list of every photo across all carousels
+  const slides = $$(".gallery-item .gallery-track img").map((img) => {
+    const item = img.closest(".gallery-item");
+    const label = $(".gallery-overlay span", item);
+    return {
+      src: img.src,
+      alt: img.alt,
+      caption: label ? label.textContent : "",
+    };
+  });
+
   let currentIndex = 0;
   let previousFocus = null;
   const focusableSelector = "button, [href], [tabindex]";
 
-  function getFullSrc(thumb) {
-    return thumb.src;
-  }
-
   function show(index) {
-    currentIndex = index;
-    const item = items[index];
-    if (!item) return;
-    const img = $("img", item);
-    const label = $(".gallery-overlay span", item);
-    imgEl.src = getFullSrc(img);
-    imgEl.alt = img.alt;
-    if (captionEl) captionEl.textContent = label ? label.textContent : "";
+    if (!slides.length) return;
+    currentIndex = ((index % slides.length) + slides.length) % slides.length;
+    const slide = slides[currentIndex];
+    imgEl.src = slide.src;
+    imgEl.alt = slide.alt;
+    if (captionEl) captionEl.textContent = slide.caption;
     lightboxEl.classList.add("active");
     lightboxEl.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
-    // Trap focus
     const close = $(".lightbox-close", lightboxEl);
     if (close) close.focus();
   }
@@ -194,29 +245,42 @@ function safeEl(id) { return document.getElementById(id); }
     if (previousFocus) previousFocus.focus();
   }
 
-  function next() { show((currentIndex + 1) % items.length); }
-  function prev() { show((currentIndex - 1 + items.length) % items.length); }
+  function next() { show(currentIndex + 1); }
+  function prev() { show(currentIndex - 1); }
 
-  // Open
-  items.forEach((item, i) => {
-    item.addEventListener("click", () => { previousFocus = document.activeElement; show(i); });
+  // Open on card click — start from the currently visible slide in that card
+  $$(".gallery-item").forEach((item) => {
     item.setAttribute("tabindex", "0");
     item.setAttribute("role", "button");
-    item.addEventListener("keydown", e => { if (e.key === "Enter") { previousFocus = document.activeElement; show(i); } });
+
+    const open = () => {
+      previousFocus = document.activeElement;
+      const imgs = $$(".gallery-track img", item);
+      const activeDot = $(".gallery-dots span.active", item);
+      const dots = $$(".gallery-dots span", item);
+      const localIndex = activeDot ? Math.max(0, dots.indexOf(activeDot)) : 0;
+      const globalIndex = slides.findIndex((s) => s.src === imgs[localIndex]?.src);
+      show(globalIndex >= 0 ? globalIndex : 0);
+    };
+
+    item.addEventListener("click", open);
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open();
+      }
+    });
   });
 
-  // Controls
   $(".lightbox-close", lightboxEl)?.addEventListener("click", hide);
   $(".lightbox-next", lightboxEl)?.addEventListener("click", next);
   $(".lightbox-prev", lightboxEl)?.addEventListener("click", prev);
 
-  // Keyboard
-  document.addEventListener("keydown", e => {
+  document.addEventListener("keydown", (e) => {
     if (!lightboxEl.classList.contains("active")) return;
     if (e.key === "Escape") hide();
     if (e.key === "ArrowRight") next();
     if (e.key === "ArrowLeft") prev();
-    // Trap focus inside lightbox
     if (e.key === "Tab") {
       const focusable = $$(focusableSelector, lightboxEl);
       if (!focusable.length) return;
@@ -227,8 +291,7 @@ function safeEl(id) { return document.getElementById(id); }
     }
   });
 
-  // Close on backdrop
-  lightboxEl.addEventListener("click", e => { if (e.target === lightboxEl) hide(); });
+  lightboxEl.addEventListener("click", (e) => { if (e.target === lightboxEl) hide(); });
 })();
 
 /* ============================================================

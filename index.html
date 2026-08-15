@@ -3,20 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AeroVista Cairo Residence | Modern Apartment Rental in Cairo</title>
-  <meta name="description" content="Discover a comfortable, modern apartment rental in Cairo, Egypt. View apartment photos, amenities, location information and contact the owner directly.">
-  <meta name="keywords" content="apartment rental Cairo, Egypt tourism, vacation rental, short stay Cairo, furnished apartment Egypt">
+
+  <!-- ========== SEO: Primary ========== -->
+  <title>AeroVista Cairo Residence | Apartment Near Cairo Airport</title>
+  <meta name="description" content="Stay at AeroVista Cairo Residence, a modern furnished apartment near Cairo International Airport for tourists, families and business travelers. Book direct.">
   <meta name="author" content="AeroVista Cairo Residence">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#1a2332">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="AeroVista Cairo Residence | Modern Apartment Rental in Cairo">
-  <meta property="og:description" content="Discover a comfortable, modern apartment rental in Cairo, Egypt. View apartment photos, amenities, location information and contact the owner directly.">
-  <meta property="og:type" content="website">
-  <!-- Replace with your actual image URL -->
-  <meta property="og:image" content="img/living-room.jpg">
+  <!--
+    Canonical URL — replace YOUR-DOMAIN.com with your real production domain
+    (example: https://www.aerovistacairo.com/).
+  -->
+  <link rel="canonical" href="https://www.YOUR-DOMAIN.com/">
 
-  <!-- Favicon placeholder — replace with your own -->
+  <!-- ========== SEO: Open Graph (Facebook, WhatsApp, LinkedIn) ========== -->
+  <!-- Replace YOUR-DOMAIN.com with your real production domain in og:url and og:image. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AeroVista Cairo Residence">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AeroVista Cairo Residence | Apartment Near Cairo Airport">
+  <meta property="og:description" content="Stay at AeroVista Cairo Residence, a modern furnished apartment near Cairo International Airport for tourists, families and business travelers. Book direct.">
+  <meta property="og:url" content="https://www.YOUR-DOMAIN.com/">
+  <meta property="og:image" content="https://www.YOUR-DOMAIN.com/img/livingroom1.jpeg">
+  <meta property="og:image:alt" content="Furnished living room at AeroVista Cairo Residence near Cairo Airport">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Favicon placeholder — replace with your own brand icon when available -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
 
   <!-- Google Fonts -->
@@ -29,27 +44,62 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Structured Data -->
+  <!-- ========== SEO: Structured Data (Schema.org) ========== -->
+  <!-- Replace YOUR-DOMAIN.com in url / image fields with your real production domain. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    "name": "AeroVista Cairo Residence",
-    "description": "A comfortable, modern apartment rental in Cairo, Egypt for tourists, families and short stays.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Cairo",
-      "addressCountry": "EG"
-    },
-    "telephone": "+201000000000",
-    "email": "your-email@example.com",
-    "url": "",
-    "image": "img/living-room.jpg",
-    "priceRange": "$$",
-    "amenityFeature": [
-      {"@type": "LocationFeatureSpecification", "name": "Free Wi-Fi"},
-      {"@type": "LocationFeatureSpecification", "name": "Air Conditioning"},
-      {"@type": "LocationFeatureSpecification", "name": "Fully Equipped Kitchen"}
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.YOUR-DOMAIN.com/#website",
+        "name": "AeroVista Cairo Residence",
+        "url": "https://www.YOUR-DOMAIN.com/",
+        "description": "Furnished apartment rental near Cairo International Airport for tourists, families and business travelers.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://www.YOUR-DOMAIN.com/#lodging"
+        }
+      },
+      {
+        "@type": "LodgingBusiness",
+        "@id": "https://www.YOUR-DOMAIN.com/#lodging",
+        "name": "AeroVista Cairo Residence",
+        "description": "A modern furnished apartment near Cairo International Airport in Cairo, Egypt. Suitable for tourists, families, business travelers and short stays. Direct owner booking.",
+        "url": "https://www.YOUR-DOMAIN.com/",
+        "telephone": "+201096606466",
+        "email": "Aerovista.cairo@gmail.com",
+        "image": [
+          "https://www.YOUR-DOMAIN.com/img/livingroom1.jpeg",
+          "https://www.YOUR-DOMAIN.com/img/sala.jpeg",
+          "https://www.YOUR-DOMAIN.com/img/bedroom3.jpeg",
+          "https://www.YOUR-DOMAIN.com/img/ketchen.jpeg",
+          "https://www.YOUR-DOMAIN.com/img/about-apartment.jpg"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rich House, Huckstep, El Nozha",
+          "addressLocality": "Cairo",
+          "addressRegion": "Cairo Governorate",
+          "addressCountry": "EG"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Cairo"
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Fully Equipped Kitchen", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Elevator", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Washing Machine", "value": true }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/aerovista.cairo",
+          "https://www.facebook.com/share/1BiGtxHYnL/?mibextid=wwXIfr"
+        ]
+      }
     ]
   }
   </script>
@@ -104,7 +154,7 @@
         <!-- Edit the values below to match your apartment -->
         <div class="info-item">
           <i class="fas fa-users" aria-hidden="true"></i>
-          <span class="info-value">4</span>
+          <span class="info-value">5</span>
           <span class="info-label">Guests</span>
         </div>
         <div class="info-item">
@@ -144,38 +194,65 @@
         <p class="section-subtitle">Take a closer look at the rooms, facilities and comfortable spaces.</p>
       </div>
       <div class="gallery-grid">
-        <!-- Replace src with your actual apartment photos -->
-        <div class="gallery-item reveal" data-index="0">
-          <img src="img/living-room.jpg" alt="Spacious living room with modern furniture" width="600" height="400" loading="lazy">
+        <div class="gallery-item reveal">
+          <div class="gallery-carousel" data-label="Living Room">
+            <div class="gallery-track">
+              <img src="img/livingroom1.jpeg" alt="Modern furnished living room at AeroVista Cairo Residence in Cairo" width="600" height="400" loading="lazy">
+              <img src="img/livingroom2.jpeg" alt="Living room seating area with natural light" width="600" height="400" loading="lazy">
+            </div>
+          </div>
           <div class="gallery-overlay"><span>Living Room</span></div>
+          <div class="gallery-dots" aria-hidden="true"><span class="active"></span><span></span></div>
         </div>
-        <div class="gallery-item reveal" data-index="1">
-          <img src="img/bedroom-1.jpg" alt="Comfortable primary bedroom with queen bed" width="600" height="400" loading="lazy">
+        <div class="gallery-item reveal">
+          <div class="gallery-carousel" data-label="Sala">
+            <div class="gallery-track">
+              <img src="img/sala.jpeg" alt="Bright lounge sala with comfortable seating" width="600" height="400" loading="lazy">
+              <img src="img/sala2.jpeg" alt="Furnished sala seating and decor details" width="600" height="400" loading="lazy">
+            </div>
+          </div>
+          <div class="gallery-overlay"><span>Sala</span></div>
+          <div class="gallery-dots" aria-hidden="true"><span class="active"></span><span></span></div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-carousel" data-label="Bedroom 1">
+            <div class="gallery-track">
+              <img src="img/bedroom3.jpeg" alt="Primary bedroom with comfortable bed and soft lighting" width="600" height="400" loading="lazy">
+              <img src="img/bedroom4.jpeg" alt="Primary bedroom storage and furnishings" width="600" height="400" loading="lazy">
+            </div>
+          </div>
           <div class="gallery-overlay"><span>Bedroom 1</span></div>
+          <div class="gallery-dots" aria-hidden="true"><span class="active"></span><span></span></div>
         </div>
-        <div class="gallery-item reveal" data-index="2">
-          <img src="img/bedroom-2.jpg" alt="Cozy second bedroom with twin beds" width="600" height="400" loading="lazy">
+        <div class="gallery-item reveal">
+          <div class="gallery-carousel" data-label="Bedroom 2">
+            <div class="gallery-track">
+              <img src="img/bedroom.jpeg" alt="Second bedroom ready for guests" width="600" height="400" loading="lazy">
+              <img src="img/bedroom2.jpeg" alt="Second bedroom layout and furnishings" width="600" height="400" loading="lazy">
+            </div>
+          </div>
           <div class="gallery-overlay"><span>Bedroom 2</span></div>
+          <div class="gallery-dots" aria-hidden="true"><span class="active"></span><span></span></div>
         </div>
-        <div class="gallery-item reveal" data-index="3">
-          <img src="img/kitchen.jpg" alt="Fully equipped modern kitchen" width="600" height="400" loading="lazy">
+        <div class="gallery-item reveal">
+          <div class="gallery-carousel" data-label="Kitchen">
+            <div class="gallery-track">
+              <img src="img/ketchen.jpeg" alt="Fully equipped kitchen for short stays in Cairo" width="600" height="400" loading="lazy">
+              <img src="img/ketchen2.jpeg" alt="Kitchen counters, appliances and cooking space" width="600" height="400" loading="lazy">
+            </div>
+          </div>
           <div class="gallery-overlay"><span>Kitchen</span></div>
+          <div class="gallery-dots" aria-hidden="true"><span class="active"></span><span></span></div>
         </div>
-        <div class="gallery-item reveal" data-index="4">
-          <img src="img/bathroom.jpg" alt="Clean modern bathroom with shower" width="600" height="400" loading="lazy">
+        <div class="gallery-item reveal">
+          <div class="gallery-carousel" data-label="Bathroom">
+            <div class="gallery-track">
+              <img src="img/bathroom1.jpeg" alt="Clean modern bathroom with shower" width="600" height="400" loading="lazy">
+              <img src="img/bathroom2.jpeg" alt="Bathroom fixtures and vanity area" width="600" height="400" loading="lazy">
+            </div>
+          </div>
           <div class="gallery-overlay"><span>Bathroom</span></div>
-        </div>
-        <div class="gallery-item reveal" data-index="5">
-          <img src="img/balcony.jpg" alt="Apartment balcony with seating and city view" width="600" height="400" loading="lazy">
-          <div class="gallery-overlay"><span>Balcony</span></div>
-        </div>
-        <div class="gallery-item reveal" data-index="6">
-          <img src="img/dining-area.jpg" alt="Dining area with table for four" width="600" height="400" loading="lazy">
-          <div class="gallery-overlay"><span>Dining Area</span></div>
-        </div>
-        <div class="gallery-item reveal" data-index="7">
-          <img src="img/building-view.jpg" alt="Building exterior view" width="600" height="400" loading="lazy">
-          <div class="gallery-overlay"><span>Building View</span></div>
+          <div class="gallery-dots" aria-hidden="true"><span class="active"></span><span></span></div>
         </div>
       </div>
     </div>
@@ -197,7 +274,7 @@
     <div class="container about-grid">
       <div class="about-image reveal">
         <!-- Replace with your apartment photo -->
-        <img src="img/about-apartment.jpg" alt="Overview of the apartment interior" width="700" height="500" loading="lazy">
+        <img src="img/about-apartment.jpg" alt="Interior overview of AeroVista Cairo Residence furnished apartment" width="700" height="500" loading="lazy">
       </div>
       <div class="about-content reveal">
         <h2 class="section-title">A Home Away From Home</h2>
@@ -387,16 +464,17 @@
           <ul class="contact-list">
             <li><i class="fas fa-user" aria-hidden="true"></i> <span id="footerOwner">Your Name</span></li>
             <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+201000000000" id="footerPhone">+20 100 000 0000</a></li>
-            <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/201000000000" target="_blank" rel="noopener noreferrer" id="footerWhatsapp">+20 100 000 0000</a></li>
-            <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:your-email@example.com" id="footerEmail">your-email@example.com</a></li>
+            <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+201098789472" id="footerPhone2">+20 109 878 9472</a></li>
+            <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/201096606466" target="_blank" rel="noopener noreferrer" id="footerWhatsapp">+20 109 660 6466</a></li>
+            <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/201105507636" target="_blank" rel="noopener noreferrer" id="footerWhatsapp2">+20 110 550 7636</a></li>
+            <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:Aerovista.cairo@gmail.com" id="footerEmail">Aerovista.cairo@gmail.com</a></li>
             <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span id="footerCity">Cairo, Egypt</span></li>
             <li><i class="fas fa-clock" aria-hidden="true"></i> Available daily from 9:00 AM to 11:00 PM</li>
           </ul>
           <div class="social-icons">
             <!-- Add your social media links -->
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/share/1BiGtxHYnL/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/aerovista.cairo?igsh=dXgwM3B6NzlyNDZz&igsi=dXgwM3B6NzlyNDZz&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
 
