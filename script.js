@@ -211,11 +211,10 @@ function safeEl(id) { return document.getElementById(id); }
   // Flat list of every photo across all carousels
   const slides = $$(".gallery-item .gallery-track img").map((img) => {
     const item = img.closest(".gallery-item");
-    const label = $(".gallery-overlay span", item);
     return {
       src: img.src,
       alt: img.alt,
-      caption: label ? label.textContent : "",
+      item,
     };
   });
 
@@ -227,9 +226,10 @@ function safeEl(id) { return document.getElementById(id); }
     if (!slides.length) return;
     currentIndex = ((index % slides.length) + slides.length) % slides.length;
     const slide = slides[currentIndex];
+    const label = $(".gallery-overlay span", slide.item);
     imgEl.src = slide.src;
     imgEl.alt = slide.alt;
-    if (captionEl) captionEl.textContent = slide.caption;
+    if (captionEl) captionEl.textContent = label ? label.textContent : "";
     lightboxEl.classList.add("active");
     lightboxEl.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -342,24 +342,24 @@ function safeEl(id) { return document.getElementById(id); }
 
     let valid = true;
 
-    if (!name) { showError("guestNameError", "Please enter your full name."); valid = false; }
-    if (!contact) { showError("guestContactError", "Please enter your email or phone."); valid = false; }
-    if (!arrival) { showError("arrivalDateError", "Please select an arrival date."); valid = false; }
-    if (!departure) { showError("departureDateError", "Please select a departure date."); valid = false; }
-    if (arrival && departure && arrival >= departure) { showError("departureDateError", "Departure must be after arrival."); valid = false; }
-    if (!guests || guests < 1) { showError("numGuestsError", "Please enter number of guests."); valid = false; }
+    if (!name) { showError("guestNameError", t("errName")); valid = false; }
+    if (!contact) { showError("guestContactError", t("errContact")); valid = false; }
+    if (!arrival) { showError("arrivalDateError", t("errArrival")); valid = false; }
+    if (!departure) { showError("departureDateError", t("errDeparture")); valid = false; }
+    if (arrival && departure && arrival >= departure) { showError("departureDateError", t("errDepartureOrder")); valid = false; }
+    if (!guests || guests < 1) { showError("numGuestsError", t("errGuests")); valid = false; }
 
     if (!valid) return;
 
     const text =
-      `Hello, I'm interested in renting *${apartmentConfig.apartmentName}*.\n\n` +
-      `*Name:* ${name}\n` +
-      `*Contact:* ${contact}\n` +
-      `*Arrival:* ${arrival}\n` +
-      `*Departure:* ${departure}\n` +
-      `*Guests:* ${guests}\n` +
-      (message ? `*Message:* ${message}\n` : "") +
-      `\nPlease let me know about availability and pricing. Thank you!`;
+      `${t("waIntro")} *${apartmentConfig.apartmentName}*.\n\n` +
+      `*${t("waName")}:* ${name}\n` +
+      `*${t("waContact")}:* ${contact}\n` +
+      `*${t("waArrival")}:* ${arrival}\n` +
+      `*${t("waDeparture")}:* ${departure}\n` +
+      `*${t("waGuests")}:* ${guests}\n` +
+      (message ? `*${t("waMessage")}:* ${message}\n` : "") +
+      `\n${t("waOutro")}`;
 
     const url = "https://wa.me/" + apartmentConfig.whatsappNumber + "?text=" + encodeURIComponent(text);
     window.open(url, "_blank", "noopener");
